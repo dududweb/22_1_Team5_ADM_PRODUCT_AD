@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Main from './Main.js';
+import Main from './Pages/Main';
 
 function Router() {
   return (
