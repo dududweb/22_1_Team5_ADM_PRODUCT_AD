@@ -1,11 +1,21 @@
+import React from 'react';
 import Nav from '../Component/Nav/Nav';
 import Add from '../Component/Add/Add';
 import Header from '../Component/Header/Header';
+import DatePickerPage from '../Component/DatePicker/DatePicker';
 
 export default function Main() {
+  const [startDate, setStartDate] = React.useState(null);
+  const [endDate, setEndDate] = React.useState(null);
+
   return (
     <>
-      <div>메인페이지입니다</div>
+      <DatePickerPage
+        startDate={startDate}
+        setStartDate={setStartDate}
+        endDate={endDate}
+        setEndDate={setEndDate}
+      />
       <Nav />
       <Header />
       <Add />
