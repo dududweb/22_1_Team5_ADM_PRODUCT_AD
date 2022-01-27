@@ -4,6 +4,7 @@ import Add from '../Component/Add/Add';
 import Header from '../Component/Header/Header';
 import DatePickerPage from '../Component/DatePicker/DatePicker';
 import ImageUploder from '../Component/ImageUploder/ImageUploder';
+import styled from 'styled-components';
 
 export default function Main() {
   const [startDate, setStartDate] = React.useState(null);
@@ -11,6 +12,13 @@ export default function Main() {
 
   return (
     <>
+      <Container>
+        <Nav />
+        <Wrapper>
+          <Header />
+          <Add />
+        </Wrapper>
+      </Container>
       <DatePickerPage
         startDate={startDate}
         setStartDate={setStartDate}
@@ -18,9 +26,13 @@ export default function Main() {
         setEndDate={setEndDate}
       />
       <ImageUploder />
-      <Nav />
-      <Header />
-      <Add />
     </>
   );
 }
+
+const Container = styled.div`
+  display: flex;
+`;
+const Wrapper = styled.div`
+  width: 100%;
+`;
