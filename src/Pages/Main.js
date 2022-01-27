@@ -14,10 +14,8 @@ export default function Main() {
     <>
       <Container>
         <Nav />
-        <Wrapper>
-          <Header />
-          <Add />
-        </Wrapper>
+        <Header />
+        <Add />
       </Container>
       <DatePickerPage
         startDate={startDate}
@@ -32,7 +30,9 @@ export default function Main() {
 
 const Container = styled.div`
   display: flex;
+  height: 1000vh;
 `;
+
 const Wrapper = styled.div`
-  width: 100%;
+  /* width: 100%; */
 `;

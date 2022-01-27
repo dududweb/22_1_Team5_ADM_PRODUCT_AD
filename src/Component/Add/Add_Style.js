@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
 export const Add = styled.div`
-  margin: 110px 30px;
+  width: 100%;
+  margin: 130px 230px;
 `;

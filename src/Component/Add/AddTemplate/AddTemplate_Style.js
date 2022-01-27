@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const AddTemplate = styled.div`
+  width: 1100px;
   display: flex;
   border: 1px solid lightgray;
 `;

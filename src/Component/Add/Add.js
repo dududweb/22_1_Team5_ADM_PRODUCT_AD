@@ -1,4 +1,4 @@
-import * as S from './AddStyle';
+import * as S from './Add_Style';
 import AddTemplate from './AddTemplate/AddTemplate';
 import TitleTemplate from './TitleTemplate/TitleTemplate';
 
