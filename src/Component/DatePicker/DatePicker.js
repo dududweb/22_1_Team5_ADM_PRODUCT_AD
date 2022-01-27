@@ -4,7 +4,7 @@ import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import DatePicker from '@mui/lab/DatePicker';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import { Datepicker } from './style';
+import { Datepicker } from './DatePicker_Style';
 
 export default function BasicDatePicker(props) {
   const { startDate, setStartDate, endDate, setEndDate } = props;

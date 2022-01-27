@@ -3,6 +3,7 @@ import Nav from '../Component/Nav/Nav';
 import Add from '../Component/Add/Add';
 import Header from '../Component/Header/Header';
 import DatePickerPage from '../Component/DatePicker/DatePicker';
+import ImageUploder from '../Component/ImageUploder/ImageUploder';
 
 export default function Main() {
   const [startDate, setStartDate] = React.useState(null);
@@ -16,6 +17,7 @@ export default function Main() {
         endDate={endDate}
         setEndDate={setEndDate}
       />
+      <ImageUploder />
       <Nav />
       <Header />
       <Add />
