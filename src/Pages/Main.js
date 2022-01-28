@@ -6,22 +6,18 @@ import ProductBasicInformation from './ProductBasicInformation/ProductBasicInfor
 import ProductOption from './ProductOption/ProductOption';
 
 export default function Main() {
-  const [startDate, setStartDate] = React.useState(null);
-  const [endDate, setEndDate] = React.useState(null);
-
-  const head = '상품등록';
+  // const [startDate, setStartDate] = React.useState(null);
+  // const [endDate, setEndDate] = React.useState(null);
 
   return (
-    <>
-      <Container>
-        <Nav />
-        <Header head={head} />
-        <Wrapper>
-          <ProductBasicInformation />
-          <ProductOption />
-        </Wrapper>
-      </Container>
-    </>
+    <Container>
+      <Nav />
+      <Header />
+      <Wrapper>
+        <ProductBasicInformation />
+        <ProductOption />
+      </Wrapper>
+    </Container>
   );
 }
 
