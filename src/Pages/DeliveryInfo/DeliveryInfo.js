@@ -3,6 +3,7 @@ import TitleTemplate from '../../Component/Add/TitleTemplate/TitleTemplate';
 import CustomDepartDate from './CustomDepartDate';
 import PickUpInfo from './PickUpInfo';
 import EarlyOrder from './EarlyOrder';
+import { ContentsBox } from '../MainContents_Style';
 
 export default function DeliveryInfo() {
   const title = '상품 배송정보';
@@ -13,7 +14,7 @@ export default function DeliveryInfo() {
   ];
 
   return (
-    <>
+    <ContentsBox>
       <TitleTemplate title={title} />
       {subtitle.map((list, index) => {
         return (
@@ -24,6 +25,6 @@ export default function DeliveryInfo() {
           </AddTemplate>
         );
       })}
-    </>
+    </ContentsBox>
   );
 }

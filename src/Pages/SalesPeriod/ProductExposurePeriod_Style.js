@@ -67,7 +67,7 @@ export const RadioButton = styled.input`
         width: 12px;
         height: 12px;
         margin: 6px;
-        box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.1);
+         box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.1);
         background: blue;
       }
     }

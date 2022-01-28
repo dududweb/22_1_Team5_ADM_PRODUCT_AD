@@ -9,6 +9,8 @@ import DeliveryInfo from './DeliveryInfo/DeliveryInfo';
 import MileageSave from './MileageSave/MieageSave';
 import OtherSettigns from './OtherSettings/OtherSettings';
 import ProductNotice from './ProductNotice/ProductNotice';
+import AddProductImage from './AddProductImage/AddProductImage';
+import IntroduceImage from './IntroduceImage/IntroduceImage';
 
 export default function Main() {
   // const [startDate, setStartDate] = React.useState(null);
@@ -19,12 +21,16 @@ export default function Main() {
       <Nav />
       <Header />
       <Wrapper>
+        <SalesPeriod />
         <ProductBasicInformation />
         <ProductOption />
         <ProductNotice />
+        <SalesPeriod />
         <DeliveryInfo />
         <MileageSave />
         <OtherSettigns />
+        <IntroduceImage />
+        <AddProductImage />
       </Wrapper>
     </Container>
   );
