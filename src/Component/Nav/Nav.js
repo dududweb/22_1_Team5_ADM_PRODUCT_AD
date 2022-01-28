@@ -10,8 +10,8 @@ export default function Nav() {
       <S.CategoryWrapper>
         {NAV_DATA?.map(data => {
           return (
-            <S.MainCategoryWrapper>
-              <S.MainCategory key={data.id}>
+            <S.MainCategoryWrapper key={data.id}>
+              <S.MainCategory>
                 {data.value}
                 <ul>
                   {data.list.map(data => {

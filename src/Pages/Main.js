@@ -1,31 +1,26 @@
 import React from 'react';
 import Nav from '../Component/Nav/Nav';
-import Add from '../Component/Add/Add';
 import Header from '../Component/Header/Header';
-import DatePickerPage from '../Component/DatePicker/DatePicker';
-import ImageUploder from '../Component/ImageUploder/ImageUploder';
 import styled from 'styled-components';
+import ProductBasicInformation from './ProductBasicInformation/ProductBasicInformation';
+import ProductOption from './ProductOption/ProductOption';
 
 export default function Main() {
   const [startDate, setStartDate] = React.useState(null);
   const [endDate, setEndDate] = React.useState(null);
 
+  const head = '상품등록';
+
   return (
     <>
       <Container>
         <Nav />
+        <Header head={head} />
         <Wrapper>
-          <Header />
-          <Add />
+          <ProductBasicInformation />
+          <ProductOption />
         </Wrapper>
       </Container>
-      <DatePickerPage
-        startDate={startDate}
-        setStartDate={setStartDate}
-        endDate={endDate}
-        setEndDate={setEndDate}
-      />
-      <ImageUploder />
     </>
   );
 }
@@ -33,6 +28,8 @@ export default function Main() {
 const Container = styled.div`
   display: flex;
 `;
+
 const Wrapper = styled.div`
   width: 100%;
+  margin: 110px 0 0 220px;
 `;

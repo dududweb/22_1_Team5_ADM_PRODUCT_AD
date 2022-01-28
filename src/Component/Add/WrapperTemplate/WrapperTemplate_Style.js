@@ -1,11 +1,9 @@
 import styled from 'styled-components';
 
-export const TitleTemplate = styled.div`
+export const WrapperTemplate = styled.div`
   width: 1100px;
-`;
-
-export const Container = styled.div`
   padding: 18px;
+  background-color: #f5f5f5;
   border: 1px solid lightgray;
-  font-weight: 500;
+  border-top: none;
 `;
