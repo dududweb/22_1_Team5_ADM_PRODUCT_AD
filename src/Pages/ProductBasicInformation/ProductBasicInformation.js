@@ -1,3 +1,4 @@
+import React from 'react';
 import TitleTemplate from '../../Component/Add/TitleTemplate/TitleTemplate';
 import AddTemplate from '../../Component/Add/AddTemplate/AddTemplate';
 import { ContentsBox } from '../MainContents_Style';
@@ -6,7 +7,7 @@ import FilterTag from './FilterTag/FilterTag';
 import ProductName from './ProductName/ProductName';
 import ProductMeta from './ProductMeta/ProductMeta';
 import Stock from './Stock/Stock';
-import AddImageButton from '../../Component/AddImageInput/AddImageButton';
+import ImageUploder from '../../Component/ImageUploder/ImageUploder';
 
 const title = '상품 기본 정보';
 const subtitle = [
@@ -20,6 +21,12 @@ const subtitle = [
 ];
 
 export default function ProductBasicInformation() {
+  const [thumbnailImage, setThumbnailImage] = React.useState([]);
+  const [thumbnailName, setThumbnailName] = React.useState([]);
+
+  const [representativeImage, setRepresentativeImage] = React.useState([]);
+  const [representativeImageName, setRepresentativeName] = React.useState([]);
+
   return (
     <ContentsBox>
       <TitleTemplate title={title} />
@@ -30,8 +37,24 @@ export default function ProductBasicInformation() {
             {index === 1 && <FilterTag />}
             {index === 2 && <ProductName />}
             {index === 3 && <ProductMeta />}
-            {index === 4 && <AddImageButton />}
-            {index === 5 && <AddImageButton />}
+            {index === 4 && (
+              <ImageUploder
+                name="thumbnailImage"
+                myImage={representativeImage}
+                setMyImage={setRepresentativeImage}
+                myImageName={representativeImageName}
+                setMyImageName={setRepresentativeName}
+              />
+            )}
+            {index === 5 && (
+              <ImageUploder
+                name="representativeImage"
+                myImage={thumbnailImage}
+                setMyImage={setThumbnailImage}
+                myImageName={thumbnailName}
+                setMyImageName={setThumbnailName}
+              />
+            )}
             {index === 6 && <Stock />}
           </AddTemplate>
         );
