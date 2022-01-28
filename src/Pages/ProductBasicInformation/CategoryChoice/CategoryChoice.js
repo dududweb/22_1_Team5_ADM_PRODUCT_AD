@@ -21,8 +21,6 @@ export default function CategoryChoice() {
     }
   };
 
-  console.log(choiceCategory);
-
   return (
     <S.CategoryContainer>
       <S.CategoryCheckbox>
