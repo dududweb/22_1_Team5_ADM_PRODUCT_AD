@@ -5,6 +5,8 @@ import styled from 'styled-components';
 import ProductBasicInformation from './ProductBasicInformation/ProductBasicInformation';
 import ProductOption from './ProductOption/ProductOption';
 import DeliveryInfo from './DeliveryInfo/DeliveryInfo';
+import MileageSave from './MileageSave/MieageSave';
+import OtherSettigns from './OtherSettings/OtherSettings';
 
 export default function Main() {
   // const [startDate, setStartDate] = React.useState(null);
@@ -18,6 +20,8 @@ export default function Main() {
         <ProductBasicInformation />
         <ProductOption />
         <DeliveryInfo />
+        <MileageSave />
+        <OtherSettigns />
       </Wrapper>
     </Container>
   );
