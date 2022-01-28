@@ -25,7 +25,6 @@ export default function Main() {
         <ProductBasicInformation />
         <ProductOption />
         <ProductNotice />
-        <SalesPeriod />
         <DeliveryInfo />
         <MileageSave />
         <OtherSettigns />
