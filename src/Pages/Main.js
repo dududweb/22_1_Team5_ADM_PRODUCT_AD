@@ -1,6 +1,10 @@
 import React from 'react';
 import Nav from '../Component/Nav/Nav';
 import Header from '../Component/Header/Header';
+import DatePickerPage from '../Component/DatePicker/DatePicker';
+import ImageUploder from '../Component/ImageUploder/ImageUploder';
+import ProductNotice from './ProductNotice/ProductNotice';
+import DeliveryInfo from './DeliveryInfo/DeliveryInfo';
 import styled from 'styled-components';
 import ProductBasicInformation from './ProductBasicInformation/ProductBasicInformation';
 
