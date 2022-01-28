@@ -4,7 +4,6 @@ import { ContentsBox } from '../MainContents_Style';
 
 export default function ProductOption() {
   const title = '상품 옵션';
-
   return (
     <ContentsBox>
       <TitleTemplate title={title} />
