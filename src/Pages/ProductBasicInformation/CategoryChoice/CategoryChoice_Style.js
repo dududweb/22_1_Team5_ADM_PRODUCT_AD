@@ -42,9 +42,11 @@ export const CategoryButton = styled.div`
 export const ButtonName = styled.div`
   display: flex;
   justify-content: center;
-  flex: 8;
+  flex: 10;
+  padding-left: 30px;
 `;
 export const DeleteButton = styled.button`
   display: flex;
-  flex: 2;
+  justify-content: end;
+  flex: 1;
 `;
