@@ -8,6 +8,6 @@ export const AddImageButton = styled.div`
   width: 230px;
   text-align: center;
   color: black;
-  border: 1px solid blue;
+  border: 1px solid #000051;
   border-radius: 5px;
 `;
