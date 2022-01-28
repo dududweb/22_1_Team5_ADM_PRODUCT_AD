@@ -20,7 +20,10 @@ export default function Main() {
         <Nav />
         <Header head={head} />
         <Wrapper>
-          <ProductBasicInformation />
+          <Header />
+          <Add />
+          <ProductNotice />
+          <DeliveryInfo />
         </Wrapper>
       </Container>
     </>
