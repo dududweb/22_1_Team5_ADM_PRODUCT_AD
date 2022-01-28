@@ -9,51 +9,59 @@ import AddInfoButton from './AddInfoButton';
 import { ContentsBox } from '../MainContents_Style';
 
 export default function ProductNotice() {
+  const [contentsData, setContentsData] = useState([1]);
+  const [infoValueList, setInfoValueList] = useState();
+
   const title = '상품 정보 고시';
   const width = 700;
-  const [infoValue, setInfoValue] = useState('');
-  const [infoValueList, setInfoValueList] = useState({
-    product_name: '',
-    country: '',
-    grade: '',
-    storage: '',
-    variation: '',
-  });
-  const getInputValue = e => {
-    setInfoValue(e.target.value);
-  };
-
-  const subtitle = [
+  const newInputWidth = 620;
+  const newId = Date.now();
+  const inputTitle = [
     {
       id: 1,
-      title: '제품명 / 중량',
+      name: 'product',
+      title: '제품명',
       placeholder: '제품명 / 중량을 입력해 주세요.',
-      value: infoValueList.product_name,
     },
     {
       id: 2,
+      name: 'country',
       title: '원산지 / 원재료 함량',
       placeholder: '원산지 / 원재료 함량 입력해 주세요.',
-      value: infoValueList.country,
     },
     {
       id: 3,
+      name: 'grade',
       title: '등급',
       placeholder: '등급(근내지방도 수치) 입력해 주세요.',
-      value: infoValueList.grade,
     },
     {
       id: 4,
+      name: 'storage',
       title: '보관',
       placeholder: '보관방식을 입력해 주세요.',
-      value: infoValueList.storage,
     },
     {
       id: 5,
+      name: 'foodtype',
       title: '식품유형',
       placeholder: '식품유형을 입력해 주세요.',
     },
   ];
+
+  const getInputValue = e => {
+    const { name, value } = e.target;
+    setInfoValueList({ ...infoValueList, [name]: value });
+  };
+
+  const addForm = e => {
+    const { name, value } = e.target;
+    setContentsData({ ...contentsData, [name]: value });
+  };
+
+  console.log(contentsData);
+  console.log(infoValueList);
+  //아이디를 생ㄱ성해줘 삭제.
 
   return (
     <ContentsBox>
@@ -64,14 +72,33 @@ export default function ProductNotice() {
             <S.InfoTitle>정보고시</S.InfoTitle>
             <DeleteButton />
           </S.InfoTag>
-          {subtitle.map((el, idx) => {
+          {inputTitle.map(el => {
             return (
-              <S.InputDataWrap key={idx}>
+              <S.InputDataWrap key={el.id}>
                 <S.InputDataTitle>{el.title}</S.InputDataTitle>
-                <Input placeholder={el.placeholder} width={width} />
+                <S.Input
+                  name={el.name}
+                  onChange={getInputValue}
+                  width={width}
+                  placeholder={el.placeholder}
+                />
               </S.InputDataWrap>
             );
           })}
+          {contentsData &&
+            contentsData.map(el => {
+              return (
+                <S.InputDataWrap key={el.id}>
+                  <S.InputDataTitle>
+                    <S.Input onChange={addForm} name={el.name} />
+                  </S.InputDataTitle>
+                  <S.NewInputWrap>
+                    <S.Input onChange={addForm} width={newInputWidth} />
+                    <DeleteButton />
+                  </S.NewInputWrap>
+                </S.InputDataWrap>
+              );
+            })}
           <AddInfoUnitButton />
         </S.InfoDetailBox>
         <AddInfoButton />
