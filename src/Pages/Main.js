@@ -5,17 +5,16 @@ import styled from 'styled-components';
 import ProductBasicInformation from './ProductBasicInformation/ProductBasicInformation';
 import ProductOption from './ProductOption/ProductOption';
 import SalesPeriod from './SalesPeriod/SalesPeriod';
+import DeliveryInfo from './DeliveryInfo/DeliveryInfo';
 
 export default function Main() {
-  const [startDate, setStartDate] = React.useState(null);
-  const [endDate, setEndDate] = React.useState(null);
-
-  const head = '상품등록';
+  // const [startDate, setStartDate] = React.useState(null);
+  // const [endDate, setEndDate] = React.useState(null);
 
   return (
     <Container>
       <Nav />
-      <Header head={head} />
+      <Header />
       <Wrapper>
         <ProductBasicInformation />
         <ProductOption />
