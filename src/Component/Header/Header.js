@@ -1,10 +1,10 @@
 import * as S from './Header_Style';
 
-export default function Header() {
+export default function Header(props) {
   return (
     <S.Header>
       <S.Container />
-      <S.Title>상품등록</S.Title>
+      <S.Title>{props.head}</S.Title>
     </S.Header>
   );
 }

@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 
 export const Header = styled.div`
+  width: calc(100vw - 200px);
+  height: 68px;
   position: fixed;
-  width: 100%;
+  top: 0;
   left: 200px;
 `;
 
@@ -13,6 +15,8 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.div`
+  display: flex;
+  justify-content: space-between;
   border-bottom: 1px solid lightgray;
   background-color: white;
   padding: 16px 18px;
