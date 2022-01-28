@@ -5,6 +5,7 @@ export const Container = styled.div`
   margin: 20px auto;
   padding: 20px;
   border: 1px solid lightgray;
+  text-align: center;
   background-color: white;
 `;
 
@@ -13,6 +14,9 @@ export const ImageBox = styled.div`
   height: 200px;
   border: 1px solid lightgray;
   background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const OptionAddBtn = styled.button`
@@ -23,4 +27,10 @@ export const OptionAddBtn = styled.button`
 
   border: 1px solid;
   border-radius: 5px;
+`;
+
+export const DeleteBtnWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 20px;
 `;

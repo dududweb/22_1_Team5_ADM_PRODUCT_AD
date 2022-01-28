@@ -3,6 +3,7 @@ import TitleTemplate from '../../../Component/Add/TitleTemplate/TitleTemplate';
 import WrapperTemplate from '../../../Component/Add/WrapperTemplate/WrapperTemplate';
 import { ContentsBox } from '../../MainContents_Style';
 import ProductOptionSetList from './ProductOptionSetList';
+import DeleteButton from '../../../Component/Button/DeleteButton';
 import * as S from './ProductOptionSet_Style';
 
 export default function ProductOptionSet() {
@@ -10,20 +11,20 @@ export default function ProductOptionSet() {
 
   const [OptionListDatas, setOptionListDatas] = useState([]);
 
-  useEffect(() => {
-    fetch('./data/ProductOptionMockData.json')
-      .then(res => res.json())
-      .then(result => {
-        setOptionListDatas(result);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch('./data/ProductOptionMockData.json')
+  //     .then(res => res.json())
+  //     .then(result => {
+  //       setOptionListDatas(result);
+  //     });
+  // }, []);
 
   const handleAddOption = () => {
     setOptionListDatas([
       ...OptionListDatas,
       {
-        id: null,
-        optionName: null,
+        id: 1,
+        optionName: 'ㅇㅇ',
         Price: null,
         sellPrice: null,
         stock: null,
@@ -32,20 +33,54 @@ export default function ProductOptionSet() {
         addOptionPrice: null,
       },
     ]);
+    console.log('test', OptionListDatas);
   };
 
-  console.log(OptionListDatas);
+  // const handleAddOption = () => {
+  //   fetch('./data/ProductOptionMockData.json')
+  //     .then(res => res.json())
+  //     .then(result => {
+  //       setOptionListDatas(OptionListDatas => [
+  //         ...OptionListDatas,
+  //         {
+  //           id: result[0].id,
+  //           optionName: null,
+  //           Price: null,
+  //           sellPrice: null,
+  //           stock: null,
+  //           taxation: null,
+  //           addOptionName: null,
+  //           addOptionPrice: null,
+  //         },
+  //       ]);
+
+  //     });
+  // };
+
+  const handleDeleteSetItem = name => {
+    setOptionListDatas(OptionListDatas.filter(item => item.name !== name));
+  };
 
   return (
     <ContentsBox>
-      <TitleTemplate title={title}></TitleTemplate>
-      <button onClick={handleAddOption}>옵션 세트 추가</button>
+      <S.TitleWrapper>
+        <TitleTemplate title={title} />
+        <S.OptionSetBtn onClick={handleAddOption}>
+          + 옵션 세트 추가
+        </S.OptionSetBtn>
+      </S.TitleWrapper>
       <WrapperTemplate>
-        <ProductOptionSetList
-          OptionListDatas={OptionListDatas}
-          // setOptionListDatas={setOptionListDatas}
-        />
-        <S.EmptyOption>옵션세트를 추가하여 옵션을 구성해 주세요.</S.EmptyOption>
+        {OptionListDatas?.length > 0 ? (
+          <ProductOptionSetList
+            OptionListDatas={OptionListDatas}
+            setOptionListDatas={setOptionListDatas}
+            handleDeleteSetItem={handleDeleteSetItem}
+          />
+        ) : (
+          <S.EmptyOption>
+            옵션세트를 추가하여 옵션을 구성해 주세요.
+          </S.EmptyOption>
+        )}
       </WrapperTemplate>
     </ContentsBox>
   );

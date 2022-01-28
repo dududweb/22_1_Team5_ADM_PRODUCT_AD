@@ -1,16 +1,17 @@
 import ProductOptionSetItem from './ProductOptionSetItem';
 
-export const ProductOptionSetList = ({ OptionListDatas }) => {
-  // console.log(OptionListDatas);
-
+export const ProductOptionSetList = ({
+  OptionListDatas,
+  handleDeleteSetItem,
+}) => {
   return (
     <ul>
-      {OptionListDatas?.map(optionData => (
+      {OptionListDatas?.map(setData => (
         <ProductOptionSetItem
-          key={optionData.id}
-          optionData={optionData}
+          key={setData.id}
+          optionData={setData}
           OptionListDatas={OptionListDatas}
-          // setOptionListDatas={setOptionListDatas}
+          handleDeleteSetItem={handleDeleteSetItem}
         />
       ))}
     </ul>

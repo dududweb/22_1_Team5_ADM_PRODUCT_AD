@@ -4,24 +4,30 @@ import Header from '../Component/Header/Header';
 import styled from 'styled-components';
 import ProductBasicInformation from './ProductBasicInformation/ProductBasicInformation';
 import ProductOptionSet from './ProductOption/ProductOptionSet/ProductOptionSet';
+import SalesPeriod from './SalesPeriod/SalesPeriod';
+import DeliveryInfo from './DeliveryInfo/DeliveryInfo';
+import MileageSave from './MileageSave/MieageSave';
+import OtherSettigns from './OtherSettings/OtherSettings';
+import ProductNotice from './ProductNotice/ProductNotice';
 
 export default function Main() {
-  const [startDate, setStartDate] = React.useState(null);
-  const [endDate, setEndDate] = React.useState(null);
-
-  const head = '상품등록';
+  // const [startDate, setStartDate] = React.useState(null);
+  // const [endDate, setEndDate] = React.useState(null);
 
   return (
-    <>
-      <Container>
-        <Nav />
-        <Header head={head} />
-        <Wrapper>
-          <ProductBasicInformation />
-          <ProductOptionSet />
-        </Wrapper>
-      </Container>
-    </>
+    <Container>
+      <Nav />
+      <Header />
+      <Wrapper>
+        <SalesPeriod />
+        <ProductBasicInformation />
+        <ProductOptionSet />
+        <ProductNotice />
+        <DeliveryInfo />
+        <MileageSave />
+        <OtherSettigns />
+      </Wrapper>
+    </Container>
   );
 }
 
