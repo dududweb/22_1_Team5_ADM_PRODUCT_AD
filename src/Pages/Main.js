@@ -17,6 +17,7 @@ export default function Main() {
       <Wrapper>
         <ProductBasicInformation />
         <ProductOption />
+        <DeliveryInfo />
       </Wrapper>
     </Container>
   );
