@@ -1,12 +1,9 @@
 import React from 'react';
 import Nav from '../Component/Nav/Nav';
 import Header from '../Component/Header/Header';
-import DatePickerPage from '../Component/DatePicker/DatePicker';
-import ImageUploder from '../Component/ImageUploder/ImageUploder';
-import ProductNotice from './ProductNotice/ProductNotice';
-import DeliveryInfo from './DeliveryInfo/DeliveryInfo';
 import styled from 'styled-components';
 import ProductBasicInformation from './ProductBasicInformation/ProductBasicInformation';
+import DeliveryInfo from './DeliveryInfo/DeliveryInfo';
 
 export default function Main() {
   const [startDate, setStartDate] = React.useState(null);
@@ -15,18 +12,14 @@ export default function Main() {
   const head = '상품등록';
 
   return (
-    <>
-      <Container>
-        <Nav />
-        <Header head={head} />
-        <Wrapper>
-          <Header />
-          <Add />
-          <ProductNotice />
-          <DeliveryInfo />
-        </Wrapper>
-      </Container>
-    </>
+    <Container>
+      <Nav />
+      <Header head={head} />
+      <Wrapper>
+        <ProductBasicInformation />
+        <DeliveryInfo />
+      </Wrapper>
+    </Container>
   );
 }
 

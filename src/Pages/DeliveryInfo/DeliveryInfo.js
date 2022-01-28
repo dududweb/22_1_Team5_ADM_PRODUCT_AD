@@ -1,16 +1,15 @@
 import AddTemplate from '../../Component/Add/AddTemplate/AddTemplate';
 import TitleTemplate from '../../Component/Add/TitleTemplate/TitleTemplate';
-import ToggleButton from '../../Component/ToggleButton/ToggleButton';
+import CustomDepartDate from './CustomDepartDate';
+import PickUpInfo from './PickUpInfo';
+import EarlyOrder from './EarlyOrder';
 
 export default function DeliveryInfo() {
   const title = '상품 배송정보';
   const subtitle = [
-    { title: '카테고리' },
-    { title: '필터 태그' },
-    { title: '상품명*' },
-    { title: '상품 구성 소개 정보*' },
-    { title: '상품 썸네일' },
-    { title: '상품 대표 이미지' },
+    { title: '사용자 배송일 출발일 지정' },
+    { title: '방문 수령' },
+    { title: '선 주문 예약배송' },
   ];
 
   return (
@@ -19,11 +18,12 @@ export default function DeliveryInfo() {
       {subtitle.map((list, index) => {
         return (
           <AddTemplate key={index} subtitle={list.title}>
-            {/* {index === 0 && <ToggleButton />} */}
+            {index === 0 && <CustomDepartDate />}
+            {index === 1 && <PickUpInfo />}
+            {index === 2 && <EarlyOrder />}
           </AddTemplate>
         );
       })}
-      <ToggleButton />
     </>
   );
 }
