@@ -1,8 +1,5 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  display: flex;
-`;
 export const Wrapper = styled.div`
   width: 100%;
 `;
@@ -19,9 +16,7 @@ export const Exposureperiod = styled.div`
   padding-top: 30px;
 `;
 
-export const Wrap = styled.div`
-  margin-left: 200px;
-`;
+export const Wrap = styled.div``;
 
 export const Item = styled.div`
   display: flex;
@@ -63,8 +58,8 @@ export const RadioButton = styled.input`
     props.checked &&
     ` 
     &:checked + ${RadioButtonLabel} {
-      background: blue;
-      border: 1px solid #db7290;
+      background: white;
+      border: 1px solid blue;
       &::after {
         content: "";
         display: block;
@@ -73,12 +68,8 @@ export const RadioButton = styled.input`
         height: 12px;
         margin: 6px;
         box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.1);
-        background: white;
+        background: blue;
       }
     }
   `}
-`;
-export const Salesdeadline = styled.div`
-  margin-top: 20px;
-  border: 1px solid;
 `;
