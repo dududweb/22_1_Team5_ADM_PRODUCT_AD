@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import ToggleButton from '../../Component/ToggleButton/ToggleButton';
 
-export default function PickUpInfo() {
+export default function OtherSettingsInfo() {
   const [value, setValue] = useState(false);
-  const id = 'a2';
+  const id = 'a5';
   return (
     <ToggleButton id={id} value={value} setValue={setValue}></ToggleButton>
   );
