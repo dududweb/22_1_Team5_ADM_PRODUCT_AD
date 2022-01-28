@@ -19,6 +19,7 @@ export default function Main() {
       <Nav />
       <Header />
       <Wrapper>
+        <SalesPeriod />
         <ProductBasicInformation />
         <ProductOption />
         <ProductNotice />
