@@ -20,6 +20,7 @@ export const SubTitleBox = styled.div`
 `;
 
 export const ContentsBox = styled.div`
+  width: 100%;
   padding: 18px;
   font-size: 16px;
   background-color: white;

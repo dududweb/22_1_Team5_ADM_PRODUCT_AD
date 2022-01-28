@@ -28,7 +28,7 @@ export default function FilterTag() {
         <option value="grape" />
         <option value="orange" />
       </datalist>
-      <button onClick={searchFilterTag}>검색</button>
+      <S.TagInputButton onClick={searchFilterTag}>검색</S.TagInputButton>
     </S.InputContainer>
   );
 }
