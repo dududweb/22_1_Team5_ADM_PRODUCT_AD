@@ -26,8 +26,8 @@ export default function Main() {
 const Container = styled.div`
   display: flex;
 `;
+
 const Wrapper = styled.div`
-  margin-top: 66px;
-  padding: 20px 0 0 20px;
   width: 100%;
+  margin: 110px 0 0 220px;
 `;

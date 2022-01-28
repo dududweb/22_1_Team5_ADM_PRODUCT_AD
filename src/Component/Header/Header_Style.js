@@ -9,8 +9,8 @@ export const Header = styled.div`
 `;
 
 export const Container = styled.div`
-  padding: 20px;
-  background-color: red;
+  padding: 24px;
+  background-color: white;
   border-bottom: 1px solid lightgray;
 `;
 
@@ -18,7 +18,7 @@ export const Title = styled.div`
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid lightgray;
-  background-color: red;
-  padding: 12px 18px;
+  background-color: white;
+  padding: 16px 18px;
   font-weight: 500;
 `;

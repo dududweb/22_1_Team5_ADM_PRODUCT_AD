@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const SaveButton = styled.div`
+export const SaveButton = styled.button`
   padding: 5px;
   width: 90px;
   text-align: center;
