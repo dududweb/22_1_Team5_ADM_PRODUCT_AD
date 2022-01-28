@@ -1,26 +1,21 @@
-import AddTemplate from '../../Component/Add/AddTemplate/AddTemplate';
+import * as S from '../../Component/Add/AddTemplate/AddTemplate_Style';
 import TitleTemplate from '../../Component/Add/TitleTemplate/TitleTemplate';
+import WrapperTemplate from '../../Component/Add/WrapperTemplate/WrapperTemplate';
 
 export default function ProductNotice() {
-  const title = '상품 기본 정보';
+  const title = '상품 정보 고시';
   const subtitle = [
     {
       title: '카테고리',
-      contents: ['카테고리1', '카테고리2', '카테고리3'],
     },
-    { title: '필터 태그' },
-    { title: '상품명*' },
-    { title: '상품 구성 소개 정보*' },
-    { title: '상품 썸네일' },
-    { title: '상품 대표 이미지' },
   ];
 
   return (
-    <>
+    <S.ContentsBox>
       <TitleTemplate title={title} />
-      {subtitle.map((list, index) => {
-        return <AddTemplate key={index} subtitle={list.title}></AddTemplate>;
-      })}
-    </>
+      <WrapperTemplate>
+        <div>내용 내용</div>
+      </WrapperTemplate>
+    </S.ContentsBox>
   );
 }
