@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Nav = styled.div`
   width: 220px;
+  height: 100vh;
   font-size: 16px;
   border-right: 1px solid lightgray;
 `;
