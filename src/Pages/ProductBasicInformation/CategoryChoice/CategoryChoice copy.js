@@ -21,6 +21,10 @@ export default function CategoryChoice() {
     }
   };
 
+  // const deleteChoiceCategory = e => {
+  //   e.target.id;
+  // };
+
   return (
     <S.CategoryContainer>
       <S.CategoryCheckbox>

@@ -14,3 +14,7 @@ export const TagInputButton = styled.button`
   border-radius: 4px;
   padding: 10px 20px;
 `;
+export const FilterTag = styled.div`
+  width: 100%;
+  padding: 20px 0;
+`;
