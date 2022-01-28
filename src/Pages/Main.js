@@ -3,6 +3,7 @@ import Nav from '../Component/Nav/Nav';
 import Header from '../Component/Header/Header';
 import styled from 'styled-components';
 import ProductBasicInformation from './ProductBasicInformation/ProductBasicInformation';
+import ProductOption from './ProductOption/ProductOption';
 
 export default function Main() {
   const [startDate, setStartDate] = React.useState(null);
@@ -17,6 +18,7 @@ export default function Main() {
         <Header head={head} />
         <Wrapper>
           <ProductBasicInformation />
+          <ProductOption />
         </Wrapper>
       </Container>
     </>

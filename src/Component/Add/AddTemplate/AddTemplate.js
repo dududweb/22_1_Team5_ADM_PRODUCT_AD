@@ -7,6 +7,7 @@ export default function AddTemplate(props) {
       <S.SubTitleBox>
         <p>{subtitle}</p>
       </S.SubTitleBox>
+
       <S.ContentsBox>{children}</S.ContentsBox>
     </S.AddTemplate>
   );

@@ -24,3 +24,8 @@ export const ContentsBox = styled.div`
   font-size: 16px;
   background-color: white;
 `;
+
+export const WrapperTemplate = styled.div`
+  width: 1100px;
+  background-color: red;
+`;
