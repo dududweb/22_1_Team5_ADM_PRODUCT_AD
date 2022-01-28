@@ -8,7 +8,7 @@ export const AddTemplate = styled.div`
 `;
 
 export const SubTitleBox = styled.div`
-  width: 180px;
+  width: 200px;
   padding: 18px;
   font-size: 16px;
   background-color: #f5f5f5;
@@ -20,6 +20,7 @@ export const SubTitleBox = styled.div`
 `;
 
 export const ContentsBox = styled.div`
+  width: 100%;
   padding: 18px;
   font-size: 16px;
   background-color: white;
