@@ -10,10 +10,19 @@ export const AddButton = styled.label`
   border: 1px solid blue;
   border-radius: 5px;
 `;
-export const Div = styled.div``;
-export const Button = styled.input`
-  display: none;
+export const Div = styled.div`
+  display: flex;
 `;
+
+export const Button = styled.input``;
+export const ImgArea = styled.div``;
 export const ImgName = styled.div``;
 
 export const DeleteButton = styled.button``;
+
+export const ImgageName = styled.div`
+  margin-left: 10px;
+`;
+export const DeleteButtons = styled.div`
+  margin-left: 30px;
+`;
