@@ -45,6 +45,13 @@ export default function ProductNotice() {
     nextId.current += 1;
   };
 
+  const RemoveList = id => {
+    return contentsData.length !== 1
+      ? setContentsData(contentsData.filter(el => el.id !== id))
+      : null;
+  };
+
+  console.log(contentsData);
   const [infoValueList, setInfoValueList] = useState('');
   const inputTitle = [
     {
@@ -125,7 +132,9 @@ export default function ProductNotice() {
                       onChange={getInputNew}
                       name={el.tagContents}
                     />
-                    <DeleteButton />
+                    <S.DeleteButton onClick={() => RemoveList(el.id)}>
+                      삭제
+                    </S.DeleteButton>
                   </S.NewInputWrap>
                 </S.InputDataWrap>
               );
