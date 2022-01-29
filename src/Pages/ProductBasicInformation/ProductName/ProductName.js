@@ -24,6 +24,7 @@ export default function ProductName() {
         <S.TagInput
           placeholder="상품명을 입력해 주세요."
           onChange={randomString}
+          value={productName}
         />
       </S.InputContainer>
       <S.TitleBox>상품 코드</S.TitleBox>

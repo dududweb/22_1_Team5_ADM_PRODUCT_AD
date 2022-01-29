@@ -18,6 +18,6 @@ export default function Input({
       name={name}
       onChange={onChange}
       value={value}
-    ></S.Input>
+    />
   );
 }

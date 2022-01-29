@@ -51,7 +51,6 @@ export default function ProductNotice() {
       : null;
   };
 
-  console.log(contentsData);
   const [infoValueList, setInfoValueList] = useState('');
   const inputTitle = [
     {

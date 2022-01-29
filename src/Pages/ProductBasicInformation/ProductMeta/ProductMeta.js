@@ -3,7 +3,6 @@ import * as S from './ProductMeta_Style';
 
 export default function ProductMeta() {
   const [productMeta, setProductMeta] = React.useState('');
-  console.log(productMeta);
 
   const typingProductMeta = e => {
     setProductMeta(e.target.value);
@@ -14,6 +13,7 @@ export default function ProductMeta() {
       <S.TagInput
         placeholder="상품 구성 소개 정보를 입력해 주세요."
         onChange={typingProductMeta}
+        value={productMeta}
       />
     </S.InputContainer>
   );

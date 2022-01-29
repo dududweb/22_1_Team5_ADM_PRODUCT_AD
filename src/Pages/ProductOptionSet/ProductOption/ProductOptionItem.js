@@ -5,10 +5,7 @@ import DeleteButton from '../../../Component/Button/DeleteButton';
 import Add from '../../../Component/Icon/add_black_24dp';
 import AddOption from './AddOption';
 
-export default function ProductOptionItem({
-  optionListDatas,
-  setOptionListDatas,
-}) {
+export default function ProductOptionItem() {
   const width = [
     { id: 1, width: 880 },
     { id: 2, width: 150 },
@@ -18,14 +15,6 @@ export default function ProductOptionItem({
     { id: 6, width: 360 },
   ];
   const margin = 7;
-  // const [inputs, setInputs] = useState({
-  //   optionName: '',
-  //   price: '',
-  //   sellPrice: '',
-  //   stock: '',
-  //   addOptionName: '',
-  //   addOptionPrice: '',
-  // });
 
   const [addOptionProduct, setAddOptionProduct] = useState([
     { addOptionName: '', addOptionPrice: '' },
@@ -36,7 +25,6 @@ export default function ProductOptionItem({
       ...addOptionProduct,
       { id: addOptionProduct.length + 1 },
     ]);
-    console.log('클-완!');
   };
 
   const [inputs, setInputs] = useState({
@@ -64,7 +52,6 @@ export default function ProductOptionItem({
       ...inputs,
       [name]: value,
     });
-    console.log('testeststs', inputs);
   };
 
   return (
@@ -133,7 +120,7 @@ export default function ProductOptionItem({
       </S.OptionPriceWrapper>
 
       <ul>
-        {addOptionProduct?.map(data => {
+        {addOptionProduct?.map(data => (
           <AddOption
             key={data.id}
             onChangeInput={onChangeInput}
@@ -143,8 +130,8 @@ export default function ProductOptionItem({
             setInputs={setInputs}
             addOptionName={addOptionName}
             addOptionPrice={addOptionPrice}
-          />;
-        })}
+          />
+        ))}
       </ul>
 
       <S.AddOptionBtnWrapper onClick={handleAddOptionProduct}>
