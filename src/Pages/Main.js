@@ -3,7 +3,7 @@ import Nav from '../Component/Nav/Nav';
 import Header from '../Component/Header/Header';
 import styled from 'styled-components';
 import ProductBasicInformation from './ProductBasicInformation/ProductBasicInformation';
-import ProductOption from './ProductOption/ProductOption';
+import ProductOptionSet from './ProductOption/ProductOptionSet/ProductOptionSet';
 import SalesPeriod from './SalesPeriod/SalesPeriod';
 import DeliveryInfo from './DeliveryInfo/DeliveryInfo';
 import MileageSave from './MileageSave/MieageSave';
@@ -23,13 +23,13 @@ export default function Main() {
       <Wrapper>
         <SalesPeriod />
         <ProductBasicInformation />
-        <ProductOption />
+        <ProductOptionSet />
+        <IntroduceImage />
+        <AddProductImage />
         <ProductNotice />
         <DeliveryInfo />
         <MileageSave />
         <OtherSettigns />
-        <IntroduceImage />
-        <AddProductImage />
       </Wrapper>
     </Container>
   );

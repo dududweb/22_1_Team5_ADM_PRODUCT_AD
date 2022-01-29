@@ -1,34 +1,72 @@
 import React from 'react';
 import * as S from './FilterTag_Style';
 
-export default function FilterTag() {
-  const [inputTag, setInputTag] = React.useState([]);
-  const [inputTag1, setInputTag1] = React.useState('');
+const DATA_LIST = ['의류', '생활', '가전', '전자기기', '생활용품', '침구류'];
 
-  const typingFilterTag = e => {
-    setInputTag1(e.target.value);
+export default function FilterTag() {
+  const [choiceTag, setChoiceTag] = React.useState([]);
+  const [inputTag, setInputTag] = React.useState('');
+
+  const selectTag = e => {
+    if (DATA_LIST.includes(e.target.value)) {
+      setChoiceTag([...choiceTag, e.target.value]);
+      e.target.value = '';
+    }
   };
 
-  const searchFilterTag = () => {
-    setInputTag([...inputTag, inputTag1]);
-    setInputTag1('');
+  const typingFilterTag = e => {
+    setInputTag(e.target.value);
+  };
+
+  const searchTag = () => {
+    if (DATA_LIST.includes(inputTag) === false) {
+      console.log('검색 결과가 존재하지 않습니다.');
+    }
+  };
+
+  const deleteChoiceTag = e => {
+    const choiceTagId = Number(e.target.id);
+    const newChoiceTag = [...choiceTag];
+
+    newChoiceTag.splice(choiceTagId, 1);
+    setChoiceTag(newChoiceTag);
   };
 
   return (
-    <S.InputContainer>
-      <S.TagInput
-        placeholder="필터태그를 검색해 주세요."
-        onChange={typingFilterTag}
-        list="fruitslist"
-        value={inputTag1}
-      />
-      <datalist id="fruitslist">
-        <option value="apple" />
-        <option value="banana" />
-        <option value="grape" />
-        <option value="orange" />
-      </datalist>
-      <S.TagInputButton onClick={searchFilterTag}>검색</S.TagInputButton>
-    </S.InputContainer>
+    <div>
+      <S.InputContainer>
+        <S.TagInput
+          placeholder="필터태그를 검색해 주세요."
+          onChange={e => {
+            selectTag(e);
+            typingFilterTag(e);
+          }}
+          list="fruitslist"
+          id="TagInput"
+        />
+        <datalist id="fruitslist">
+          {DATA_LIST.map(list => {
+            return (
+              <option value={list} key={list}>
+                {list}
+              </option>
+            );
+          })}
+        </datalist>
+        <S.TagInputButton onClick={searchTag}>검색</S.TagInputButton>
+      </S.InputContainer>
+      {choiceTag[0] && <p style={{ paddingTop: 20 }}>지정된 필터 태그</p>}
+      <S.FilterTag>
+        {choiceTag.map((list, index) => {
+          return (
+            <div key={index}>
+              <S.Tag onClick={deleteChoiceTag} id={index}>
+                {list} X
+              </S.Tag>
+            </div>
+          );
+        })}
+      </S.FilterTag>
+    </div>
   );
 }

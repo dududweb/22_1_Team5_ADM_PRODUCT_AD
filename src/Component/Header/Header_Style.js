@@ -6,6 +6,8 @@ export const Header = styled.div`
   position: fixed;
   top: 0;
   left: 200px;
+  background-color: white;
+  z-index: 1;
 `;
 
 export const Container = styled.div`

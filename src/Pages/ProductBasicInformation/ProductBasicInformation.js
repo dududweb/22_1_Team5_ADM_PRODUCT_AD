@@ -39,20 +39,22 @@ export default function ProductBasicInformation() {
             {index === 3 && <ProductMeta />}
             {index === 4 && (
               <ImageUploder
-                name="thumbnailImage"
-                myImage={representativeImage}
-                setMyImage={setRepresentativeImage}
-                myImageName={representativeImageName}
-                setMyImageName={setRepresentativeName}
-              />
-            )}
-            {index === 5 && (
-              <ImageUploder
                 name="representativeImage"
                 myImage={thumbnailImage}
                 setMyImage={setThumbnailImage}
                 myImageName={thumbnailName}
                 setMyImageName={setThumbnailName}
+                multiple={false}
+              />
+            )}
+            {index === 5 && (
+              <ImageUploder
+                name="thumbnailImage"
+                myImage={representativeImage}
+                setMyImage={setRepresentativeImage}
+                myImageName={representativeImageName}
+                setMyImageName={setRepresentativeName}
+                multiple={true}
               />
             )}
             {index === 6 && <Stock />}
