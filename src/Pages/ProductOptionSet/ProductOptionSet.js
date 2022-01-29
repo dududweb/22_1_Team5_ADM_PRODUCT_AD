@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import TitleTemplate from '../../Component/Add/TitleTemplate/TitleTemplate';
 import WrapperTemplate from '../../Component/Add/WrapperTemplate/WrapperTemplate';
 import { ContentsBox } from '../MainContents_Style';
@@ -33,7 +33,6 @@ export default function ProductOptionSet() {
         taxation: null,
       },
     ]);
-    console.log('optionListDatas1', optionListDatas);
   };
 
   const handleAddOption = () => {
@@ -52,8 +51,6 @@ export default function ProductOptionSet() {
 
   const handleDeleteSetOption = id => {
     setOptionListDatas(optionListDatas.filter(item => item.id !== id));
-    console.log('클릭됨');
-    console.log('optionListDatas', optionListDatas);
   };
 
   return (

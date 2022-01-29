@@ -16,8 +16,6 @@ export default function ProductOptionSetItem({
   const [optionImage, setOptionImage] = React.useState([]);
   const [optionImageName, setOptionImageName] = React.useState([]);
 
-  console.log('data', optionListDatas);
-
   return (
     <S.Container>
       <S.DeleteBtnWrapper onClick={() => handleDeleteSetOption(data.id)}>
