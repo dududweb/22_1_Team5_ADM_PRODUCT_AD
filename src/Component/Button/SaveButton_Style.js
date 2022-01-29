@@ -8,4 +8,5 @@ export const SaveButton = styled.button`
   background-color: #00008c;
   border: 1px solid #00008c;
   border-radius: 5px;
+  cursor: pointer;
 `;

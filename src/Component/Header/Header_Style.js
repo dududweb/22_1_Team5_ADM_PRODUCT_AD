@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 export const Header = styled.div`
-  width: calc(100vw - 200px);
+  width: calc(100vw - 870px);
   height: 68px;
   position: fixed;
   top: 0;
   left: 200px;
   background-color: white;
-  z-index: 1;
+  z-index: 99;
 `;
 
 export const Container = styled.div`
