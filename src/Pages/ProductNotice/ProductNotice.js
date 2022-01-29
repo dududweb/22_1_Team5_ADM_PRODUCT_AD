@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import * as S from './ProductNotice_Style';
 import TitleTemplate from '../../Component/Add/TitleTemplate/TitleTemplate';
 import WrapperTemplate from '../../Component/Add/WrapperTemplate/WrapperTemplate';
@@ -9,13 +9,39 @@ import AddInfoButton from './AddInfoButton';
 import { ContentsBox } from '../MainContents_Style';
 
 export default function ProductNotice() {
-  const [contentsData, setContentsData] = useState([1]);
-  const [infoValueList, setInfoValueList] = useState();
-
   const title = '상품 정보 고시';
   const width = 700;
   const newInputWidth = 620;
-  const newId = Date.now();
+
+  const nextId = useRef(2);
+  const [newInputs, setNewInputs] = useState({
+    tagName: '',
+    tagContents: '',
+  });
+  const { tagName, tagContents } = newInputs;
+  const [contentsData, setContentsData] = useState([
+    {
+      id: 1,
+      tagName: '',
+      tagContents: '',
+    },
+  ]);
+
+  const getInputNew = e => {
+    const { name, value } = e.target;
+    setNewInputs({ ...newInputs, [name]: value });
+  };
+
+  const CreateList = () => {
+    const list = {
+      id: nextId.current,
+      tagName,
+      tagContents,
+    };
+    setContentsData([...contentsData, list]);
+  };
+
+  const [infoValueList, setInfoValueList] = useState();
   const inputTitle = [
     {
       id: 1,
@@ -54,15 +80,6 @@ export default function ProductNotice() {
     setInfoValueList({ ...infoValueList, [name]: value });
   };
 
-  const addForm = e => {
-    const { name, value } = e.target;
-    setContentsData({ ...contentsData, [name]: value });
-  };
-
-  console.log(contentsData);
-  console.log(infoValueList);
-  //아이디를 생ㄱ성해줘 삭제.
-
   return (
     <ContentsBox>
       <TitleTemplate title={title} />
@@ -90,16 +107,25 @@ export default function ProductNotice() {
               return (
                 <S.InputDataWrap key={el.id}>
                   <S.InputDataTitle>
-                    <S.Input onChange={addForm} name={el.name} />
+                    <S.Input
+                      onChange={getInputNew}
+                      name={el.tagName}
+                      value={tagName}
+                    />
                   </S.InputDataTitle>
                   <S.NewInputWrap>
-                    <S.Input onChange={addForm} width={newInputWidth} />
+                    <S.Input
+                      width={newInputWidth}
+                      onChange={getInputNew}
+                      name={el.tagName}
+                      value={tagContents}
+                    />
                     <DeleteButton />
                   </S.NewInputWrap>
                 </S.InputDataWrap>
               );
             })}
-          <AddInfoUnitButton />
+          <AddInfoUnitButton onCreate={CreateList} />
         </S.InfoDetailBox>
         <AddInfoButton />
       </WrapperTemplate>
