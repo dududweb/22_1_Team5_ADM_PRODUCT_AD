@@ -19,7 +19,9 @@ export default function FilterTag() {
   };
 
   const searchTag = () => {
-    DATA_LIST.includes(inputTag);
+    if (DATA_LIST.includes(inputTag) === false) {
+      console.log('검색 결과가 존재하지 않습니다.');
+    }
   };
 
   const deleteChoiceTag = e => {
@@ -53,17 +55,18 @@ export default function FilterTag() {
         </datalist>
         <S.TagInputButton onClick={searchTag}>검색</S.TagInputButton>
       </S.InputContainer>
-      <S.FilterTag>지정된 필터 태그</S.FilterTag>
-      {choiceTag.map((list, index) => {
-        return (
-          <div style={{ display: 'flex' }} key={index}>
-            {list}
-            <div onClick={deleteChoiceTag} id={index}>
-              X
+      {choiceTag[0] && <p style={{ paddingTop: 20 }}>지정된 필터 태그</p>}
+      <S.FilterTag>
+        {choiceTag.map((list, index) => {
+          return (
+            <div key={index}>
+              <S.Tag onClick={deleteChoiceTag} id={index}>
+                {list} X
+              </S.Tag>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </S.FilterTag>
     </div>
   );
 }

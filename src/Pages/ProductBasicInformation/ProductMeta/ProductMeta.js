@@ -2,8 +2,9 @@ import React from 'react';
 import * as S from './ProductMeta_Style';
 
 export default function ProductMeta() {
-  const [productMeta, setProductMeta] = React.useState();
+  const [productMeta, setProductMeta] = React.useState('');
   console.log(productMeta);
+
   const typingProductMeta = e => {
     setProductMeta(e.target.value);
   };
