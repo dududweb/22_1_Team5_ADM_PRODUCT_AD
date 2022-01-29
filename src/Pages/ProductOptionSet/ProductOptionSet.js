@@ -12,6 +12,7 @@ export default function ProductOptionSet() {
 
   const [addOptionListDatas, setAddOptionListDatas] = useState([
     {
+      id: 1,
       optionName: '',
       price: null,
       sellPrice: null,
@@ -20,11 +21,11 @@ export default function ProductOptionSet() {
     },
   ]);
 
-  const handleAddOption = () => {
-    setAddOptionListDatas([
-      ...addOptionListDatas,
+  const handleAddSetOption = () => {
+    setOptionListDatas([
+      ...optionListDatas,
       {
-        id: addOptionListDatas.length + 1,
+        id: optionListDatas.length + 1,
         optionName: '',
         price: null,
         sellPrice: null,
@@ -32,13 +33,14 @@ export default function ProductOptionSet() {
         taxation: null,
       },
     ]);
+    console.log('optionListDatas1', optionListDatas);
   };
 
-  const handleAddSetOption = () => {
-    setOptionListDatas([
-      ...optionListDatas,
+  const handleAddOption = () => {
+    setAddOptionListDatas([
+      ...addOptionListDatas,
       {
-        id: optionListDatas.length + 1,
+        id: addOptionListDatas.length + 1,
         optionName: '',
         price: null,
         sellPrice: null,

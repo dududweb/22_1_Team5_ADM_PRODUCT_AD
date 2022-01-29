@@ -8,7 +8,7 @@ export default function ProductOption({
   return (
     <ul>
       {addOptionListDatas?.map(data => (
-        <ProductOptionItem />
+        <ProductOptionItem key={data.id} />
       ))}
     </ul>
   );

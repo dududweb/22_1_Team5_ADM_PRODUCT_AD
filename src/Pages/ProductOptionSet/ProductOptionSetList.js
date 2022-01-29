@@ -12,8 +12,7 @@ export const ProductOptionSetList = ({
     <ul>
       {optionListDatas?.map(data => (
         <ProductOptionSetItem
-          // key={data.id}
-          // optionData={data}
+          key={data.id}
           setOptionListDatas={setOptionListDatas}
           optionListDatas={optionListDatas}
           handleDeleteSetOption={handleDeleteSetOption}
