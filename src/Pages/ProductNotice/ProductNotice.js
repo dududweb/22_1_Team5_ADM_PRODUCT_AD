@@ -2,7 +2,6 @@ import { useState, useRef } from 'react';
 import * as S from './ProductNotice_Style';
 import TitleTemplate from '../../Component/Add/TitleTemplate/TitleTemplate';
 import WrapperTemplate from '../../Component/Add/WrapperTemplate/WrapperTemplate';
-import Input from '../../Component/Input/Input';
 import DeleteButton from '../../Component/Button/DeleteButton';
 import AddInfoUnitButton from './AddInfoUnitButton';
 import AddInfoButton from './AddInfoButton';
