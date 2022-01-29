@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const SaveButton = styled.button`
   padding: 5px;
   width: 90px;
+  margin-right: 50px;
   text-align: center;
   color: white;
   background-color: #00008c;
