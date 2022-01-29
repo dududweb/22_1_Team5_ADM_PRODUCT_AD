@@ -13,9 +13,6 @@ import AddProductImage from './AddProductImage/AddProductImage';
 import IntroduceImage from './IntroduceImage/IntroduceImage';
 
 export default function Main() {
-  // const [startDate, setStartDate] = React.useState(null);
-  // const [endDate, setEndDate] = React.useState(null);
-
   return (
     <Container>
       <Nav />
