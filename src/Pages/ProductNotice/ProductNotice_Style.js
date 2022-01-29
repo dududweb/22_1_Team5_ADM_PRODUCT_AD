@@ -20,6 +20,7 @@ export const InfoTitle = styled.div`
 
 export const InputDataWrap = styled.div`
   display: flex;
+  align-items: center;
   justify-content: space-between;
   margin-top: 20px;
 `;
@@ -27,4 +28,19 @@ export const InputDataWrap = styled.div`
 export const InputDataTitle = styled.div`
   font-size: 18px;
   padding-left: 20px;
+`;
+
+export const Input = styled.input`
+  width: ${props => props.width}px;
+  margin: ${props => props.margin}px;
+  border: 1px solid #b4b4b4;
+  padding: 14px;
+  padding-bottom: 8px;
+  border-radius: 5px;
+`;
+
+export const NewInputWrap = styled.div`
+  width: 700px;
+  display: flex;
+  justify-content: space-between;
 `;
