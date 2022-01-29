@@ -24,12 +24,12 @@ export default function Main() {
         <SalesPeriod />
         <ProductBasicInformation />
         <ProductOptionSet />
+        <IntroduceImage />
+        <AddProductImage />
         <ProductNotice />
         <DeliveryInfo />
         <MileageSave />
         <OtherSettigns />
-        <IntroduceImage />
-        <AddProductImage />
       </Wrapper>
     </Container>
   );

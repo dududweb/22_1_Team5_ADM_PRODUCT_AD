@@ -5,7 +5,7 @@ import { ContentsBox } from '../MainContents_Style';
 import ImageUploder from '../../Component/ImageUploder/ImageUploder';
 
 export default function IntroduceImage() {
-  const title = '상품 추천 이미지';
+  const title = '상품 소개 이미지';
   const backgroundColor = 'white';
 
   const [productImage, setProductImage] = React.useState([]);
