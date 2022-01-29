@@ -19,6 +19,11 @@ export default function ProductNotice() {
     tagContents: '',
   });
   const { tagName, tagContents } = newInputs;
+  const getInputNew = e => {
+    const { name, value } = e.target;
+    setNewInputs({ ...newInputs, [name]: value });
+  };
+
   const [contentsData, setContentsData] = useState([
     {
       id: 1,
@@ -27,11 +32,6 @@ export default function ProductNotice() {
     },
   ]);
 
-  const getInputNew = e => {
-    const { name, value } = e.target;
-    setNewInputs({ ...newInputs, [name]: value });
-  };
-
   const CreateList = () => {
     const list = {
       id: nextId.current,
@@ -39,9 +39,14 @@ export default function ProductNotice() {
       tagContents,
     };
     setContentsData([...contentsData, list]);
+    setNewInputs({
+      tagName: '',
+      tagContents: '',
+    });
+    nextId.current += 1;
   };
 
-  const [infoValueList, setInfoValueList] = useState();
+  const [infoValueList, setInfoValueList] = useState('');
   const inputTitle = [
     {
       id: 1,
@@ -80,6 +85,9 @@ export default function ProductNotice() {
     setInfoValueList({ ...infoValueList, [name]: value });
   };
 
+  console.log(infoValueList);
+  console.log(contentsData);
+
   return (
     <ContentsBox>
       <TitleTemplate title={title} />
@@ -94,6 +102,7 @@ export default function ProductNotice() {
               <S.InputDataWrap key={el.id}>
                 <S.InputDataTitle>{el.title}</S.InputDataTitle>
                 <S.Input
+                  type="text"
                   name={el.name}
                   onChange={getInputValue}
                   width={width}
@@ -108,17 +117,17 @@ export default function ProductNotice() {
                 <S.InputDataWrap key={el.id}>
                   <S.InputDataTitle>
                     <S.Input
+                      type="text"
                       onChange={getInputNew}
                       name={el.tagName}
-                      value={tagName}
                     />
                   </S.InputDataTitle>
                   <S.NewInputWrap>
                     <S.Input
+                      type="text"
                       width={newInputWidth}
                       onChange={getInputNew}
-                      name={el.tagName}
-                      value={tagContents}
+                      name={el.tagContents}
                     />
                     <DeleteButton />
                   </S.NewInputWrap>
