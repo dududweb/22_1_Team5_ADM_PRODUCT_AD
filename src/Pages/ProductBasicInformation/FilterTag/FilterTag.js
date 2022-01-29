@@ -37,6 +37,7 @@ export default function FilterTag() {
           }}
           list="fruitslist"
           id="TagInput"
+          value={inputTag}
         />
         <datalist id="fruitslist">
           {DATA_LIST.map(list => {
