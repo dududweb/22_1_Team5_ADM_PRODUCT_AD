@@ -8,7 +8,7 @@ export default function CustomDepartDate() {
   const id = 'a3';
   return (
     <>
-      <ToggleButton id={id} value={value} setValue={setValue}></ToggleButton>
+      <ToggleButton id={id} value={value} setValue={setValue} />
       <S.DatePickerWrap>
         <S.DateTitle>주문시간</S.DateTitle>
         <DatePicker />
