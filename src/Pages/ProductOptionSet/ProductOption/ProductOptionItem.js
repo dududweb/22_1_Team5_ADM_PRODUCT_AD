@@ -64,10 +64,9 @@ export default function ProductOptionItem({
       ...inputs,
       [name]: value,
     });
+    console.log('testeststs', inputs);
   };
 
-  // console.log('optionListDatas test>>', optionListDatas);
-  console.log('inputs test>>', inputs);
   return (
     <S.Container>
       <S.DeleteButtonWrapper>
@@ -90,10 +89,19 @@ export default function ProductOptionItem({
             name="price"
             value={price}
             onChange={onChangeInput}
+            type="number"
           />
           <span>원</span>
         </span>
-        <span>할인율%</span>
+
+        {inputs.price !== '' ? (
+          <S.DiscountRate>
+            &#123;&#123;{((sellPrice / price) * 100).toFixed(0)}%&#125;&#125;
+          </S.DiscountRate>
+        ) : (
+          <S.DiscountRate>&#123;&#123;할인율%&#125;&#125;</S.DiscountRate>
+        )}
+
         <span>
           <Input
             placeholder="상품 판매가(필수)"
@@ -102,6 +110,7 @@ export default function ProductOptionItem({
             name="sellPrice"
             value={sellPrice}
             onChange={onChangeInput}
+            type="number"
           />
           <span>원</span>
         </span>
@@ -113,6 +122,7 @@ export default function ProductOptionItem({
             name="stock"
             value={stock}
             onChange={onChangeInput}
+            type="number"
           />
           <span>개</span>
         </span>

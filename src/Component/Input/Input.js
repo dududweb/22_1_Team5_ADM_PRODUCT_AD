@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import * as S from './InputStyle';
 
 export default function Input({
@@ -7,10 +8,11 @@ export default function Input({
   margin,
   onChange,
   value,
+  type,
 }) {
   return (
     <S.Input
-      type="text"
+      type={type}
       placeholder={placeholder}
       width={width}
       margin={margin}

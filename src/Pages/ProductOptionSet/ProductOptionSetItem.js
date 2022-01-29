@@ -1,7 +1,8 @@
+import React from 'react';
 import * as S from './ProductOptionSetItem_Style';
-import AddImageButton from '../../Component/AddImageInput/AddImageButton';
 import ProductOption from './ProductOption/ProductOption';
 import DeleteButton from '../../Component/Button/DeleteButton';
+import ImageUploder from '../../Component/ImageUploder/ImageUploder';
 
 export default function ProductOptionSetItem({
   handleDeleteSetOption,
@@ -11,13 +12,23 @@ export default function ProductOptionSetItem({
   addOptionListDatas,
   setAddOptionListDatas,
 }) {
+  const [optionImage, setOptionImage] = React.useState([]);
+  const [optionImageName, setOptionImageName] = React.useState([]);
+
   return (
     <S.Container>
       <S.DeleteBtnWrapper onClick={handleDeleteSetOption}>
         <DeleteButton />
       </S.DeleteBtnWrapper>
       <S.ImageBox>
-        <AddImageButton />
+        <ImageUploder
+          name="optionImage"
+          myImage={optionImage}
+          setMyImage={setOptionImage}
+          myImageName={optionImageName}
+          setMyImageName={setOptionImageName}
+          multiple={false}
+        />
       </S.ImageBox>
       <ProductOption
         optionListDatas={optionListDatas}

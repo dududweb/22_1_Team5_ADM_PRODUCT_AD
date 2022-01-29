@@ -25,6 +25,10 @@ export const SelectBox = styled.select`
   border-radius: 5px;
 `;
 
+export const DiscountRate = styled.span`
+  width: 100px;
+`;
+
 // export const AddOptionWrapper = styled.div`
 //   display: flex;
 //   justify-content: space-between;

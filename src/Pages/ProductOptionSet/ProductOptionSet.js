@@ -33,28 +33,25 @@ export default function ProductOptionSet() {
       },
     ]);
   };
-  // useEffect(() => {
-  //   fetch('./data/ProductOptionMockData.json')
-  //     .then(res => res.json())
-  //     .then(result => {
-  //       setOptionListDatas(result);
-  //     });
-  // }, []);
 
   const handleAddSetOption = () => {
     setOptionListDatas([
       ...optionListDatas,
       {
         id: optionListDatas.length + 1,
+        optionName: '',
+        price: null,
+        sellPrice: null,
+        stock: null,
+        taxation: null,
       },
     ]);
   };
 
-  console.log('tes11t', optionListDatas);
-
   const handleDeleteSetOption = id => {
     setOptionListDatas(optionListDatas.filter(item => item.id !== id));
     console.log('클릭됨');
+    console.log('optionListDatas', optionListDatas);
   };
 
   return (

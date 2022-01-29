@@ -3,7 +3,8 @@ import * as S from './ImageUploder_Style';
 import AddImageButton from '../AddImageInput/AddImageButton';
 
 export default function ImageUploder(props) {
-  const { myImage, setMyImage, myImageName, setMyImageName, name } = props;
+  const { myImage, setMyImage, myImageName, setMyImageName, name, multiple } =
+    props;
 
   const addImage = e => {
     const nowSelectImageList = e.target.files;
@@ -39,7 +40,7 @@ export default function ImageUploder(props) {
         type="file"
         accept="image/jpg, impge/png, image/jpeg, image/gif"
         name={name}
-        multiple
+        multiple={multiple}
         onChange={addImage}
       />
       <div>
