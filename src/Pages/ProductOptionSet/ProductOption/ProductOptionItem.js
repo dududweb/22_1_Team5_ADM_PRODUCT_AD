@@ -120,7 +120,7 @@ export default function ProductOptionItem() {
       </S.OptionPriceWrapper>
 
       <ul>
-        {addOptionProduct?.map(data => {
+        {addOptionProduct?.map(data => (
           <AddOption
             key={data.id}
             onChangeInput={onChangeInput}
@@ -130,8 +130,8 @@ export default function ProductOptionItem() {
             setInputs={setInputs}
             addOptionName={addOptionName}
             addOptionPrice={addOptionPrice}
-          />;
-        })}
+          />
+        ))}
       </ul>
 
       <S.AddOptionBtnWrapper onClick={handleAddOptionProduct}>
