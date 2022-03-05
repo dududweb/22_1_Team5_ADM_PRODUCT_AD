@@ -3,6 +3,9 @@
 
 ### 커머스 어드민 상품등록 페이지
 
+## 프로젝트 시연
+![image](https://user-images.githubusercontent.com/91524565/156869355-b5f3abd7-673d-4a98-b551-a46f77192d76.gif)
+
 <br/><br/>
 ## 배포 링크
 <a href="https://fervent-dubinsky-3779cf.netlify.app/">배포 링크</a> 
