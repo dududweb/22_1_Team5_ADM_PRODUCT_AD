@@ -4,7 +4,8 @@
 ### 커머스 어드민 상품등록 페이지
 
 ## 프로젝트 시연
-![image](https://user-images.githubusercontent.com/91524565/156869355-b5f3abd7-673d-4a98-b551-a46f77192d76.gif)
+![설로인](https://user-images.githubusercontent.com/91524565/156869371-b466c71b-81a8-4a2a-86a5-0d4b780bed99.gif)
+
 
 <br/><br/>
 ## 배포 링크
